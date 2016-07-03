@@ -30,8 +30,10 @@ namespace CarsCollectors.Data.Context
 
 
             modelBuilder.Configurations.Add(new VeiculoConfig());
+            modelBuilder.Configurations.Add(new FabricanteConfig());
         }
 
         public DbSet<Veiculo> Veiculos { get; set; }
+        public DbSet<Fabricante> Fabricantes { get; set; }
     }
 }

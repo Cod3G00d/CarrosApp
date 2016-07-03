@@ -16,6 +16,11 @@ namespace CarsCollectors.Data.Configs
 
             Property(v => v.Nome)
                 .IsRequired();
+
+
+            HasRequired(v => v.Fabricante)
+                .WithMany()
+                .HasForeignKey(f => f.FabricanteId);
         }
     }
 }
