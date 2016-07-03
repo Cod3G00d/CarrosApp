@@ -28,5 +28,7 @@ namespace CarsCollectors.Mvc.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<CarsCollectors.Mvc.Models.FabricanteVM> FabricanteVMs { get; set; }
     }
 }
