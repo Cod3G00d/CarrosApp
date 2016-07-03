@@ -21,6 +21,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{8D
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{420B4998-416E-44F6-8EF2-98978AB60300}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarsCollectors.Mvc", "CarsCollectors.Mvc\CarsCollectors.Mvc.csproj", "{6EE07FFA-2373-404D-BA85-D7899CDC3ED3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{762BF63A-8731-4620-BF1D-B14EB840BF96}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{762BF63A-8731-4620-BF1D-B14EB840BF96}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{762BF63A-8731-4620-BF1D-B14EB840BF96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EE07FFA-2373-404D-BA85-D7899CDC3ED3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EE07FFA-2373-404D-BA85-D7899CDC3ED3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EE07FFA-2373-404D-BA85-D7899CDC3ED3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EE07FFA-2373-404D-BA85-D7899CDC3ED3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,5 +54,6 @@ Global
 		{277BE593-ACE1-4EB2-8236-D6E32930857F} = {221260D3-B2EA-4CE5-826F-2E9689669C97}
 		{8C9F711D-CB53-4A0B-91BF-39C4F65EE877} = {277BE593-ACE1-4EB2-8236-D6E32930857F}
 		{762BF63A-8731-4620-BF1D-B14EB840BF96} = {53E8CB42-D2C6-4B3E-9C56-11490A4475C7}
+		{6EE07FFA-2373-404D-BA85-D7899CDC3ED3} = {420B4998-416E-44F6-8EF2-98978AB60300}
 	EndGlobalSection
 EndGlobal

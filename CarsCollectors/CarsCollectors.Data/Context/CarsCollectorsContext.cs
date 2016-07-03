@@ -35,5 +35,6 @@ namespace CarsCollectors.Data.Context
 
         public DbSet<Veiculo> Veiculos { get; set; }
         public DbSet<Fabricante> Fabricantes { get; set; }
+        public DbSet<TipoVeiculo> TiposVeiculo { get; set; }
     }
 }

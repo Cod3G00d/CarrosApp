@@ -37,14 +37,18 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Entities\Fabricante.cs" />
+    <Compile Include="Entities\TipoVeiculo.cs" />
     <Compile Include="Entities\Veiculo.cs" />
+    <Compile Include="Interfaces\IFabricanteRepository.cs" />
+    <Compile Include="Interfaces\IRepositoryBase.cs" />
+    <Compile Include="Interfaces\ITipoVeiculoRepository.cs" />
+    <Compile Include="Interfaces\IVeiculoRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Interfaces\" />
     <Folder Include="Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

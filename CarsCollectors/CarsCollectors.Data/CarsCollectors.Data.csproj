@@ -35,6 +35,10 @@
     <Compile Include="Context\CarsCollectorsContext.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\BaseRepository.cs" />
+    <Compile Include="Repository\FabricanteRepository.cs" />
+    <Compile Include="Repository\TipoVeiculoRepository.cs" />
+    <Compile Include="Repository\VeiculoRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CarsCollectors.Domain\CarsCollectors.Domain.csproj">
@@ -42,9 +46,7 @@
       <Name>CarsCollectors.Domain</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Repository\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
