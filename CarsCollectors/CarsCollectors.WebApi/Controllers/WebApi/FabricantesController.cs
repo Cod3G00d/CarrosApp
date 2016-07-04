@@ -4,11 +4,8 @@ using CarsCollectors.Data.Repository;
 using CarsCollectors.Domain.Entities;
 using CarsCollectors.Domain.Interfaces.Repositories;
 using CarsCollectors.WebApi.Models;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 
 namespace CarsCollectors.WebApi.Controllers.WebApi
