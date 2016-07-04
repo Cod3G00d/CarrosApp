@@ -2,7 +2,9 @@
 using CarsCollectors.Application.Interfaces;
 using CarsCollectors.Domain.Entities;
 using CarsCollectors.WebApi.Models;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Web.Http;
 
 namespace CarsCollectors.WebApi.Controllers.WebApi
@@ -21,30 +23,58 @@ namespace CarsCollectors.WebApi.Controllers.WebApi
         [HttpGet]
         //[Route("api/Fabricantes")]
         // GET api/<controller>
-        public IEnumerable<FabricanteVM> Get()
+        public IHttpActionResult Get()
         {
-            return Mapper.Map<IEnumerable<Fabricante>, IEnumerable<FabricanteVM>>(_fabService.GetAll());
+            var fabricantes = Mapper.Map<IEnumerable<Fabricante>, IEnumerable<FabricanteVM>>(_fabService.GetAll());
+            return Ok(fabricantes);
         }
 
         // GET api/<controller>/5
-        public string Get(int id)
+        public IHttpActionResult Get(Guid id)
         {
-            return "value";
+            var fabricante = Mapper.Map<Fabricante, FabricanteVM>(_fabService.FindBy(f => f.FabricanteId == id).FirstOrDefault());
+            return Ok(fabricante);
         }
 
         // POST api/<controller>
-        public void Post([FromBody]string value)
+        public IHttpActionResult Post([FromBody]FabricanteVM vm)
         {
+            if (ModelState.IsValid)
+            {
+                var fabricante = Mapper.Map<FabricanteVM, Fabricante>(vm);
+                _fabService.Add(fabricante);
+                _fabService.Save();
+                return Created("", vm);
+            }
+            else
+            {
+                return BadRequest(ModelState);
+            }
         }
 
         // PUT api/<controller>/5
-        public void Put(int id, [FromBody]string value)
+        public IHttpActionResult Put(Guid id, [FromBody]FabricanteVM vm)
         {
+            if (ModelState.IsValid)
+            {
+                var fabricanteDomain = Mapper.Map<FabricanteVM, Fabricante>(vm);
+                _fabService.Update(fabricanteDomain);
+                _fabService.Save();
+                return Ok(vm);
+            }
+            else
+            {
+                return BadRequest();
+            }
         }
 
         // DELETE api/<controller>/5
-        public void Delete(int id)
+        public IHttpActionResult Delete(Guid id)
         {
+            var fabricante = _fabService.FindBy(f => f.FabricanteId == id).FirstOrDefault();
+            _fabService.Remove(fabricante);
+            _fabService.Save();
+            return Ok();
         }
     }
 }
