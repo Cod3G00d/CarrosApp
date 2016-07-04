@@ -1,5 +1,5 @@
 ﻿using CarsCollectors.Domain.Entities;
-using CarsCollectors.Domain.Interfaces;
+using CarsCollectors.Domain.Interfaces.Repositories;
 using CarsCollectors.Data.Context;
 
 namespace CarsCollectors.Data.Repository

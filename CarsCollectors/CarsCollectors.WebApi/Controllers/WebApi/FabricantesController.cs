@@ -2,7 +2,7 @@
 using CarsCollectors.Data.Context;
 using CarsCollectors.Data.Repository;
 using CarsCollectors.Domain.Entities;
-using CarsCollectors.Domain.Interfaces;
+using CarsCollectors.Domain.Interfaces.Repositories;
 using CarsCollectors.WebApi.Models;
 using System;
 using System.Collections.Generic;

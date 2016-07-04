@@ -30,7 +30,22 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="AppBaseService.cs" />
+    <Compile Include="AppVeiculoService.cs" />
+    <Compile Include="Interfaces\IAppBaseService.cs" />
+    <Compile Include="Interfaces\IAppFabricanteService.cs" />
+    <Compile Include="Interfaces\IAppTipoVeiculoService.cs" />
+    <Compile Include="Interfaces\IAppVeiculoService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CarsCollectors.Domain\CarsCollectors.Domain.csproj">
+      <Project>{762bf63a-8731-4620-bf1d-b14eb840bf96}</Project>
+      <Name>CarsCollectors.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

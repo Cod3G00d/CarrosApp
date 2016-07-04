@@ -2,7 +2,7 @@
 using CarsCollectors.Data.Context;
 using CarsCollectors.Data.Repository;
 using CarsCollectors.Domain.Entities;
-using CarsCollectors.Domain.Interfaces;
+using CarsCollectors.Domain.Interfaces.Repositories;
 using CarsCollectors.WebApi.Models;
 using System;
 using System.Collections.Generic;
@@ -46,18 +46,18 @@ namespace CarsCollectors.WebApi.Controllers.Mvc
 
         // POST: Fabricantes/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(FabricanteVM vm)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add insert logic here
-
+                var fabricante = Mapper.Map<FabricanteVM, Fabricante>(vm);
+                repo.Add(fabricante);
+                repo.Save();
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+            // TODO: Add insert logic here
+            return View(vm);
         }
 
         // GET: Fabricantes/Edit/5

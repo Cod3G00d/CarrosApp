@@ -1,4 +1,4 @@
-﻿using CarsCollectors.Domain.Interfaces;
+﻿using CarsCollectors.Domain.Interfaces.Repositories;
 using System;
 using System.Linq;
 using System.Linq.Expressions;
