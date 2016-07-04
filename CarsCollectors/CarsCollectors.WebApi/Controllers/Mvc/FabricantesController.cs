@@ -1,24 +1,19 @@
 ﻿using AutoMapper;
-using CarsCollectors.Data.Context;
-using CarsCollectors.Data.Repository;
+using CarsCollectors.Application.Interfaces;
 using CarsCollectors.Domain.Entities;
-using CarsCollectors.Domain.Interfaces.Repositories;
 using CarsCollectors.WebApi.Models;
 using System.Collections.Generic;
-using System.Linq;
 using System.Web.Mvc;
 
 namespace CarsCollectors.WebApi.Controllers.Mvc
 {
     public class FabricantesController : Controller
     {
-        private CarsCollectorsContext db;
-        private IFabricanteRepository repo;
+        private readonly IAppFabricanteService _fabService;
 
-        public FabricantesController()
+        public FabricantesController(IAppFabricanteService fabService)
         {
-            db = new CarsCollectorsContext();
-            repo = new FabricanteRepository(db);
+            _fabService = fabService;
 
         }
 
@@ -26,7 +21,7 @@ namespace CarsCollectors.WebApi.Controllers.Mvc
         // GET: Fabricantes
         public ActionResult Index()
         {
-            var fabricantes = Mapper.Map<IEnumerable<Fabricante>, IEnumerable<FabricanteVM>>(repo.GetAll().OrderBy(f => f.Nome).ToList());
+            var fabricantes = Mapper.Map<IEnumerable<Fabricante>, IEnumerable<FabricanteVM>>(_fabService.GetAll());
             return View(fabricantes);
         }
 
@@ -50,8 +45,8 @@ namespace CarsCollectors.WebApi.Controllers.Mvc
             if (ModelState.IsValid)
             {
                 var fabricante = Mapper.Map<FabricanteVM, Fabricante>(vm);
-                repo.Add(fabricante);
-                repo.Save();
+                _fabService.Add(fabricante);
+                _fabService.Save();
                 return RedirectToAction("Index");
             }
             // TODO: Add insert logic here

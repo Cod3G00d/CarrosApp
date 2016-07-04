@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
-using CarsCollectors.Data.Context;
-using CarsCollectors.Data.Repository;
+using CarsCollectors.Application.Interfaces;
 using CarsCollectors.Domain.Entities;
 using CarsCollectors.Domain.Interfaces.Repositories;
 using CarsCollectors.WebApi.Models;
@@ -13,21 +12,20 @@ namespace CarsCollectors.WebApi.Controllers.WebApi
     //[RoutePrefix("api")]
     public class FabricantesController : ApiController
     {
-        private CarsCollectorsContext db;
-        private IFabricanteRepository repo;
+        private readonly IAppFabricanteService _fabService;
 
-        public FabricantesController()
+        public FabricantesController(IAppFabricanteService fabService)
         {
-            db = new CarsCollectorsContext();
-            repo = new FabricanteRepository(db);
+            _fabService = fabService;
 
         }
+
         [HttpGet]
         //[Route("api/Fabricantes")]
         // GET api/<controller>
         public IEnumerable<FabricanteVM> Get()
         {
-            return Mapper.Map<IEnumerable<Fabricante>, IEnumerable<FabricanteVM>>(repo.GetAll().OrderBy(f => f.Nome).ToList());
+            return Mapper.Map<IEnumerable<Fabricante>, IEnumerable<FabricanteVM>>(_fabService.GetAll());
         }
 
         // GET api/<controller>/5

@@ -331,9 +331,9 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CarsCollectors.Data\CarsCollectors.Data.csproj">
-      <Project>{8c9f711d-cb53-4a0b-91bf-39c4f65ee877}</Project>
-      <Name>CarsCollectors.Data</Name>
+    <ProjectReference Include="..\CarsCollectors.Application\CarsCollectors.Application.csproj">
+      <Project>{e8e50ce2-76f3-4159-8548-747678220e22}</Project>
+      <Name>CarsCollectors.Application</Name>
     </ProjectReference>
     <ProjectReference Include="..\CarsCollectors.Domain\CarsCollectors.Domain.csproj">
       <Project>{762bf63a-8731-4620-bf1d-b14eb840bf96}</Project>

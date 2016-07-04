@@ -45,10 +45,12 @@
     <Compile Include="Interfaces\Repositories\IVeiculoRepository.cs" />
     <Compile Include="Interfaces\Services\IBaseService.cs" />
     <Compile Include="Interfaces\Services\IFabricanteService.cs" />
+    <Compile Include="Interfaces\Services\ITipoVeiculoService.cs" />
     <Compile Include="Interfaces\Services\IVeiculoService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\BaseService.cs" />
     <Compile Include="Services\FabricanteService.cs" />
+    <Compile Include="Services\TipoVeiculoService.cs" />
     <Compile Include="Services\VeiculoService.cs" />
   </ItemGroup>
   <ItemGroup>

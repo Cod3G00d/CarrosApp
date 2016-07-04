@@ -32,6 +32,7 @@
   <ItemGroup>
     <Compile Include="AppBaseService.cs" />
     <Compile Include="AppFabricanteService.cs" />
+    <Compile Include="AppTipoVeiculoService.cs" />
     <Compile Include="AppVeiculoService.cs" />
     <Compile Include="Interfaces\IAppBaseService.cs" />
     <Compile Include="Interfaces\IAppFabricanteService.cs" />

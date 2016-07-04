@@ -1,9 +1,10 @@
 ﻿using CarsCollectors.Domain.Entities;
+using System.Linq;
 
 namespace CarsCollectors.Domain.Interfaces.Services
 {
     public interface IFabricanteService : IBaseService<Fabricante>
     {
-        //faz qualquer coisa
+        IQueryable<Fabricante> GetAll();
     }
 }
