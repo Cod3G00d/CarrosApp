@@ -350,10 +350,13 @@
     <Content Include="Views\TiposVeiculo\Create.cshtml" />
     <Content Include="Views\TiposVeiculo\Details.cshtml" />
     <Content Include="Views\TiposVeiculo\Edit.cshtml" />
+    <Content Include="Views\Veiculos\Index.cshtml" />
+    <Content Include="Views\Veiculos\Details.cshtml" />
+    <Content Include="Views\Veiculos\Create.cshtml" />
+    <Content Include="Views\Veiculos\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Veiculos\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
