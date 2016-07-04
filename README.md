@@ -4,6 +4,7 @@ App que gerencia uma colecao de carros.
 # Projeto ASPNET MVC 
 1. abra o projeto com o VS.
 2. Marque o projeto CarsCollection.WebApi como projeto inicial e aperte F5. Isso deve fazer com que o NuGet restaure todos os pacotes necessários para rodar o código.
+3. Pode ser necessário executar um "Update-Database" do migrations no projeto CarsCollectors.Data caso tenha problemas com o banco de dados.
 
 # Projeto em Angular
 1. Instale o Node.Js
