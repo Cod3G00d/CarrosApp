@@ -55,6 +55,12 @@
   <ItemGroup>
     <Content Include="app\app.config.js" />
     <Content Include="app\app.js" />
+    <Content Include="app\modules\fabricantes\fabricantes-test.js" />
+    <Content Include="app\modules\fabricantes\fabricantes.html" />
+    <Content Include="app\modules\fabricantes\fabricantesCtrl.js" />
+    <Content Include="app\modules\fabricantes\fabricantesModule.js" />
+    <Content Include="app\modules\fabricantes\fabricantesRoute.js" />
+    <Content Include="app\modules\fabricantes\fabricantesService.js" />
     <Content Include="app\modules\home\dashboard.html" />
     <Content Include="app\modules\home\home-test.js" />
     <Content Include="app\modules\home\home.html" />
@@ -64,9 +70,16 @@
     <Content Include="app\modules\home\homeService.js" />
     <Content Include="app\modules\layouts\main-page\main-page.html" />
     <Content Include="app\modules\layouts\main-page\mainPageCtrl.js" />
+    <Content Include="app\modules\layouts\nav-bar\navBarService.js" />
     <Content Include="app\modules\layouts\side-nav\sidenav.html" />
     <Content Include="app\modules\layouts\side-nav\sidenavCtrl.js" />
     <Content Include="app\modules\layouts\side-nav\sidenavService.js" />
+    <Content Include="app\modules\veiculos\veiculos-test.js" />
+    <Content Include="app\modules\veiculos\veiculos.html" />
+    <Content Include="app\modules\veiculos\veiculosCtrl.js" />
+    <Content Include="app\modules\veiculos\veiculosModule.js" />
+    <Content Include="app\modules\veiculos\veiculosRoute.js" />
+    <Content Include="app\modules\veiculos\veiculosService.js" />
     <Content Include="Gruntfile.js" />
     <Content Include="index.html" />
     <Content Include="karma.conf.js" />

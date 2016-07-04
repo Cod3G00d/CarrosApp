@@ -4,6 +4,24 @@
     "angularCookies": true,
     "angularAnimate": true,
     "angularSanitize": true,
-    "angularMaterial": true
+    "angularMaterial": true,
+    "modules": [
+      {
+        "name": "fabricantes"
+      },
+      {
+        "name": "veiculos"
+      }
+    ],
+    "menu": [
+      {
+        "link": "fabricantes",
+        "title": "Fabricantes"
+      },
+      {
+        "link": "veiculos",
+        "title": "Veiculos"
+      }
+    ]
   }
 }
