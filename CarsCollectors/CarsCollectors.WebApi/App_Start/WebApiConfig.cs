@@ -3,6 +3,7 @@ using Microsoft.Owin.Security.OAuth;
 using SimpleInjector;
 using SimpleInjector.Integration.WebApi;
 using CarsCollectors.IoC;
+using System.Web.Http.Cors;
 
 namespace CarsCollectors.WebApi
 {
@@ -16,10 +17,15 @@ namespace CarsCollectors.WebApi
             BootStrapper.RegisterServices(webapiContainer, container.Options.DefaultScopedLifestyle);
             webapiContainer.RegisterWebApiControllers(GlobalConfiguration.Configuration);
 
+            //cors
+            var cors = new EnableCorsAttribute("*", "*", "*");
+            config.EnableCors(cors);
+
             // Web API configuration and services
             // Configure Web API to use only bearer token authentication.
             config.SuppressDefaultHostAuthentication();
             config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType));
+            
 
             config.DependencyResolver = new SimpleInjectorWebApiDependencyResolver(webapiContainer);
 

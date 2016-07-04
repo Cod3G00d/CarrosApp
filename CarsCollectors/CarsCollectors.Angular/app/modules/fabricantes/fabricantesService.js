@@ -15,10 +15,10 @@
 		// Inject your dependencies as .$inject = ['$http', 'someSevide'];
 		// function Name ($http, someSevide) {...}
 
-		Fabricantes.$inject = ['$http'];
+		Fabricantes.$inject = ['$resource'];
 
-		function Fabricantes ($http) {
-
+		function Fabricantes($resource) {
+		    return $resource('http://localhost:51101' + '/api/Fabricantes/:Id');
 		}
 
 })();

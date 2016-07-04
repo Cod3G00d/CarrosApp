@@ -13,7 +13,7 @@
 		.module('fabricantes')
 		.controller('FabricantesCtrl', Fabricantes);
 
-		Fabricantes.$inject = [];
+  	Fabricantes.$inject = ['FabricantesService'];
 
 		/*
 		* recommend
@@ -21,10 +21,11 @@
 		* and bindable members up top.
 		*/
 
-		function Fabricantes() {
+  	function Fabricantes(FabricantesService) {
 			/*jshint validthis: true */
 			var vm = this;
-
+			FabricantesService.query().$promise.then(function (data) { vm.teste = data; }, function (error) { console.log(error); });
+            
 		}
 
 })();
