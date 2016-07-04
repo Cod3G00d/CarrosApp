@@ -5,7 +5,7 @@ App que gerencia uma colecao de carros.
 1. abra o projeto com o VS.
 2. Marque o projeto CarsCollection.WebApi como projeto inicial e aperte F5. Isso deve fazer com que o NuGet restaure todos os pacotes necessários para rodar o código.
 
-$ Projeto em Angular
+# Projeto em Angular
 1. Instale o Node.Js
 2. Rode o comando: "npm install -g bower"
 3. Rode o comando: "npm install -g grunt-cli"
