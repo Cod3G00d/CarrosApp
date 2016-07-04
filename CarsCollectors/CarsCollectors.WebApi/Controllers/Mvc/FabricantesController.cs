@@ -2,7 +2,9 @@
 using CarsCollectors.Application.Interfaces;
 using CarsCollectors.Domain.Entities;
 using CarsCollectors.WebApi.Models;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
 
 namespace CarsCollectors.WebApi.Controllers.Mvc
@@ -26,9 +28,10 @@ namespace CarsCollectors.WebApi.Controllers.Mvc
         }
 
         // GET: Fabricantes/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(Guid id)
         {
-            return View();
+            var fabricante = Mapper.Map<Fabricante, FabricanteVM>(_fabService.FindBy(f => f.FabricanteId == id).FirstOrDefault());
+            return View(fabricante);
         }
 
         // GET: Fabricantes/Create
@@ -54,47 +57,46 @@ namespace CarsCollectors.WebApi.Controllers.Mvc
         }
 
         // GET: Fabricantes/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(Guid id)
         {
-            return View();
+            var fabricante = Mapper.Map<Fabricante, FabricanteVM>(_fabService.FindBy(f => f.FabricanteId == id).FirstOrDefault());
+            return View(fabricante);
         }
 
         // POST: Fabricantes/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(Guid id, FabricanteVM vm)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add update logic here
+                var fabricanteDomain = Mapper.Map<FabricanteVM, Fabricante>(vm);
+                _fabService.Update(fabricanteDomain);
+                _fabService.Save();
 
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+
+            return View(vm);
         }
 
         // GET: Fabricantes/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(Guid id)
         {
-            return View();
+            var fabricante = Mapper.Map<Fabricante, FabricanteVM>(_fabService.FindBy(f => f.FabricanteId == id).FirstOrDefault());
+            return View(fabricante);
         }
 
         // POST: Fabricantes/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult Delete(Guid id, FormCollection collection)
         {
-            try
-            {
-                // TODO: Add delete logic here
+            var fabricante = _fabService.FindBy(f => f.FabricanteId == id).FirstOrDefault();
+            _fabService.Remove(fabricante);
+            _fabService.Save();
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            return RedirectToAction("Index");
         }
     }
 }

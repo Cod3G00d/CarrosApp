@@ -1,6 +1,8 @@
-﻿using CarsCollectors.Application.Interfaces;
+﻿using System.Collections.Generic;
+using CarsCollectors.Application.Interfaces;
 using CarsCollectors.Domain.Entities;
 using CarsCollectors.Domain.Interfaces.Services;
+using System.Linq;
 
 namespace CarsCollectors.Application
 {
@@ -11,6 +13,11 @@ namespace CarsCollectors.Application
         public AppTipoVeiculoService(ITipoVeiculoService tipoVeiculoService) : base(tipoVeiculoService)
         {
             _tipoVeiculoService = tipoVeiculoService;
+        }
+
+        public IEnumerable<TipoVeiculo> GetAll()
+        {
+            return _tipoVeiculoService.GetAll().ToList();
         }
     }
 }

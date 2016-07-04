@@ -15,6 +15,7 @@ namespace CarsCollectors.Mvc.AutoMapper
                 cfg.CreateMap<Fabricante, FabricanteVM>();
                 cfg.CreateMap<FabricanteVM, Fabricante>();
                 cfg.CreateMap<TipoVeiculo, TipoVeiculoVM>();
+                cfg.CreateMap<TipoVeiculoVM, TipoVeiculo>();
             });
         }
     }

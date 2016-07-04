@@ -1,0 +1,34 @@
+﻿@model CarsCollectors.WebApi.Models.TipoVeiculoVM
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TipoVeiculoVM</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Observacao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Observacao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TextoAoExecutarAcaoEspecial)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TextoAoExecutarAcaoEspecial)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TipoVeiculoId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

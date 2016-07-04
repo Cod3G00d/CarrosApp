@@ -1,10 +1,8 @@
 ﻿using AutoMapper;
 using CarsCollectors.Application.Interfaces;
 using CarsCollectors.Domain.Entities;
-using CarsCollectors.Domain.Interfaces.Repositories;
 using CarsCollectors.WebApi.Models;
 using System.Collections.Generic;
-using System.Linq;
 using System.Web.Http;
 
 namespace CarsCollectors.WebApi.Controllers.WebApi
