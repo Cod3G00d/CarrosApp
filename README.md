@@ -13,5 +13,6 @@ App que gerencia uma colecao de carros.
 4. Abra o cmd.exe ou o shell
 5. navegue até a pasata ....CarrosApp\CarsCollectors\CarsCollectors.Angular
 6. Execute o comando: "npm install" para baixar as dependencias necessárias.
-7. Certifique-se de que a WebApi (o Projeto MVC do que rodamos anteriormente) está sendo executado.
-8. Execute o comando "grunt dev"
+7. Execute o comando: "bower install -f" para baixar as dependencias necessárias.
+8. Certifique-se de que a WebApi (o Projeto MVC do que rodamos anteriormente) está sendo executado.
+9. Execute o comando "grunt dev"
